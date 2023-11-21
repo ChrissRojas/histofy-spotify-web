@@ -1,6 +1,17 @@
-from app import app
+from flask import render_template, flash, redirect, url_for, request, session
+from app import app, sp_auth
 
 @app.route('/')
 @app.route('/index')
 def index():
-    return "Hello World"
+    
+    user = {}
+    return render_template('index.html', login=user)
+
+@app.route('/login', methods=['POST','GET'])
+def login():
+    return redirect('/index')
+
+@app.route('/logout', methods=['POST','GET'])
+def logout():
+    return redirect('/index')

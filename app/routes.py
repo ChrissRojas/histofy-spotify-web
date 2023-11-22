@@ -18,7 +18,9 @@ def login():
 
 @app.route('/api_callback')
 def callback():
-    request.args.get('code')
+    code = request.args.get('code')
+    spfy_oauth.callback_token(code)
+    session.clear
 
 @app.route('/logout', methods=['POST','GET'])
 def logout():

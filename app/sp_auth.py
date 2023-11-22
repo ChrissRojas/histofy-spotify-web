@@ -12,7 +12,7 @@ class SP_HANDLER:
 
     def __init__(self,scopes):
         self.scopes=scopes
-        self.combined_scope = " ".join(self.scopes)
+        self.combined_scope = ",".join(self.scopes)
         self.sp = None
     
     def create_sp(self):
@@ -21,10 +21,17 @@ class SP_HANDLER:
             client_secret= self.CLIENT_SECRET,
             redirect_uri= self.CLIENT_REDIRECT,
             scope = self.combined_scope)
-
-
+    
     def get_auth_url(self):
         self.create_sp()
         auth_url = self.sp.get_authorize_url()
         return auth_url
     
+    def callback_token(self,code):
+        self.create_sp()
+        token_info = self.sp.get_access_token(code)
+        return token_info
+    
+    def add_scope(self, scp):
+        self.scopes.append(scp)
+        self.combined_scope = ",".join(self.scopes)

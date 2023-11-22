@@ -26,7 +26,7 @@ def callback():
     print(session['token_info'])
     return redirect('/index')
 
-@app.route('/logout', methods=['POST','GET'])
+@app.route('/logout', methods=['POST'])
 def logout():
     session.pop('token_info', None)
     return redirect('/index')

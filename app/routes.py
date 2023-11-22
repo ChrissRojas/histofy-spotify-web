@@ -1,10 +1,11 @@
 from flask import render_template, flash, redirect, url_for, request, session
-from app import app, sp_auth
+import spotipy
+from app import app
 
 @app.route('/')
 @app.route('/index')
 def index():
-    
+
     user = {}
     return render_template('index.html', login=user)
 

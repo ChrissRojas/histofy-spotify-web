@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask,session
 from config import Config
 from flask_session import Session, SqlAlchemySessionInterface
 from flask_sqlalchemy import SQLAlchemy

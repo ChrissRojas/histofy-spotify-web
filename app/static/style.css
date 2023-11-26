@@ -1,4 +1,9 @@
 /* Removing default browser style*/
+html{
+    font-size: 16px;
+    height:100%;
+    width:100%;
+}
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -15,18 +20,16 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
+
 body {
-    
-	line-height: 1;
+    font-family: 'Onest', sans-serif;
+    height: 100%;
+    /* width: 100%; */
+	display:flex;
+    flex-direction: column;
 }
 ol, ul {
 	list-style: none;
@@ -44,12 +47,38 @@ table {
 	border-spacing: 0;
 }
 
+/* Custom Properties*/
+/* :root {
+} */
 /* Actual styling*/
 
-body, .navbar, .landing-page{
-    display: flex;
+.navbar, .landing-page{
+    display:flex;
 }
 
-body {
-    font-family: 'Onest', 'sans-serif';
+.navbar{
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px 10px 20px;
+    
 }
+
+.logo h3{
+    font-size: 3rem;
+}
+.landing-page{
+    flex: 1 1;
+    justify-content: center;
+    align-items: center;
+}
+.landing-card{
+    text-align: center;
+}
+
+.lp-item-1 h1{
+    font-size: 10rem;
+    font-weight: 700;
+}
+.logo a:link{text-decoration: none;}
+.logo a:visited{text-decoration: none;}

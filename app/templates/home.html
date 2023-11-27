@@ -1,4 +1,18 @@
-{% extends base.html %}
+{% extends "base_home.html" %}
 
 {% block content %}
+<div class="top-5-artists-section">
+    <h1>Top 5 Artists</h1>
+    <div class="layout artists">
+        {% for artist in artists%}
+        {% include "track_artist_card.html" %}
+        {% endfor %}
+    </div>
+</div>
+<div class="top-5-tracks-section">
+    <h1>Top 5 Tracks</h1>
+    <div class="layout tracks">
+        
+    </div>
+</div>
 {% endblock %}

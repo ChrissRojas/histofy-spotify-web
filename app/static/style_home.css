@@ -1,3 +1,8 @@
+html{
+	font-size: 16px;
+	height: 100%;
+	width: 100%;
+}
 /* Removing default browser style*/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -15,7 +20,7 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
+	
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -25,7 +30,9 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-    
+    font-family: 'Onest', sans-serif;
+	height:100%;
+	width: 100%;
 	line-height: 1;
 }
 ol, ul {
@@ -42,4 +49,89 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+
+/* Styling */
+
+body, .navbar, .content, .navlist .item, .layout{
+	display: flex;
+}
+
+body{
+	flex-direction: row;
+}
+
+.content, .navbar{
+	flex-direction: column;
+}
+
+.navbar{
+	background-color: black;
+	color:white;
+	max-width: 400px;
+	min-width: 300px;
+	flex: 0 1 auto;
+	
+	align-items: center;
+	padding-top: 50px;
+	row-gap: 100px;
+	
+}
+
+.logo h1 {
+	font-size: 2.5rem;
+	font-weight: 700;
+}
+
+.navlist .item{
+	align-items: center;
+}
+.navlist h3{
+	margin: 10px 5px 10px 5px;
+}
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+.material-symbols-outlined.size16{
+	font-size: 16px;
+}
+
+.material-symbols-outlined.size24{
+	font-size: 24px;
+}
+.material-symbols-outlined.size32{
+	font-size: 32px;
+}
+.material-symbols-outlined.size48{
+	font-size: 48px;
+}
+.content{
+	flex: 1 1 auto; 
+	overflow:hidden;
+	max-width: 100%;
+	padding-top: 50px;
+	padding-left: 20px;
+	row-gap: 10px;
+	padding-right: 20px;
+}
+.top-5-artists-section, .top-5-tracks-section{
+	overflow-y: hidden;
+	overflow-x:scroll;
+}
+
+.top-5-artists-section h1, .top-5-tracks-section h1{
+	font-size:2.5rem;
+	margin-bottom: 10px;
+}
+
+.layout{
+	gap: 10px;
+	
 }

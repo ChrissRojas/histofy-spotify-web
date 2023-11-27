@@ -17,11 +17,17 @@ def login():
     if not spfy_oauth.valid_token():
         return redirect(spfy_oauth.get_auth_url())
     elif spfy_oauth.valid_token():
-        return redirect(url_for('index'))
+        return redirect(url_for('home'))
     
 @app.route('/home')
 def home():
-    pass
+    sp_auth = spfy_oauth.create_sp()
+    if not sp_auth.validate_token(sp_auth.cache_handler.get_cached_token()):
+        redirect(url_for('login'))
+    spotify = spotipy.Spotify(auth_manager=sp_auth)
+    # pp.pprint(spotify.current_user_top_tracks(limit=5,time_range='long_term')['items'][0])
+    artist_items = spotify.current_user_top_artists(limit=5, time_range='long_term')['items']
+    return render_template('home.html', artists=artist_items)
 
 @app.route('/top_tracks', methods=['GET','POST'])
 def top_tracks():

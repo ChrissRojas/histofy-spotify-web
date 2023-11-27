@@ -7,11 +7,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Onest:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>Histofy</title>
 </head>
 <body>
+    <div class="navbar">
+        <div class="logo"><h1>Histofy.</h1></div>
+        <div class="navlist">
+            <div class="item"><span class="material-symbols-outlined">home</span><h3><a>Dashboard</a></h3></div>
+            <div class="item"><span class="material-symbols-outlined">artist</span><h3><a>Top Artists</a></h3></div>
+            <div class="item"><span class="material-symbols-outlined">library_music</span><h3><a>Top Tracks</a></h3></div>
+            <div class="item"><span class="material-symbols-outlined">person</span><h3><a href="{{url_for('logout')}}">Logout</a></h3></div>
+        </div>
+    </div>
+    <div class="content">
     {% block content%}
     {% endblock %}
+    </div>
+</div>
 </body>
 </html>

@@ -14,9 +14,9 @@
     <div class="navbar">
         <div class="logo"><h1>Histofy.</h1></div>
         <div class="navlist">
-            <div class="item"><span class="material-symbols-outlined">home</span><h3><a>Dashboard</a></h3></div>
-            <div class="item"><span class="material-symbols-outlined">artist</span><h3><a>Top Artists</a></h3></div>
-            <div class="item"><span class="material-symbols-outlined">library_music</span><h3><a>Top Tracks</a></h3></div>
+            <div class="item"><span class="material-symbols-outlined">home</span><h3><a href="{{url_for('home')}}">Dashboard</a></h3></div>
+            <div class="item"><span class="material-symbols-outlined">artist</span><h3><a href="{{url_for('top_artists')}}">Top Artists</a></h3></div>
+            <div class="item"><span class="material-symbols-outlined">library_music</span><h3><a href="{{url_for('top_tracks')}}">Top Tracks</a></h3></div>
             <div class="item"><span class="material-symbols-outlined">person</span><h3><a href="{{url_for('logout')}}">Logout</a></h3></div>
         </div>
     </div>

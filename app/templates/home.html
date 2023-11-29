@@ -12,7 +12,9 @@
 <div class="top-5-tracks-section">
     <h1>Top 5 Tracks</h1>
     <div class="layout tracks">
-        
+        {% for track in tracks%}
+        {% include "track_card.html" %}
+        {% endfor %}
     </div>
 </div>
 {% endblock %}

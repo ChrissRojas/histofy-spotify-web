@@ -1,3 +1,9 @@
-{% extends "base_home.html %"}
+{% extends "base_home.html" %}
 {% block content %}
+<div class="grid_layout">
+    <h1>Your Top Artists</h1>
+    {% for artist in artists%}
+    {% include "track_artist_card.html" %}
+    {% endfor %}
+</div>
 {% endblock %}

@@ -27,7 +27,8 @@ def home():
     spotify = spotipy.Spotify(auth_manager=sp_auth)
     # pp.pprint(spotify.current_user_top_tracks(limit=5,time_range='long_term')['items'][0])
     artist_items = spotify.current_user_top_artists(limit=5, time_range='long_term')['items']
-    return render_template('home.html', artists=artist_items)
+    track_items = spotify.current_user_top_tracks(limit=5,time_range='long_term')['items']
+    return render_template('home.html', artists=artist_items, tracks=track_items)
 
 @app.route('/top_tracks', methods=['GET','POST'])
 def top_tracks():
@@ -35,8 +36,9 @@ def top_tracks():
     if not sp_auth.validate_token(sp_auth.cache_handler.get_cached_token()):
         redirect(url_for('login'))
     spotify = spotipy.Spotify(auth_manager=sp_auth)
-    pp.pprint(spotify.current_user_top_tracks(limit=20,time_range='long_term')['items'][0])
-    return redirect('/index')
+    # pp.pprint(spotify.current_user_top_tracks(limit=20,time_range='long_term')['items'][0])
+    track_items = spotify.current_user_top_tracks(limit=20,time_range='long_term')['items']
+    return render_template('top_track.html',tracks=track_items)
 
 @app.route('/top_artists', methods=['GET'])
 def top_artists():
@@ -44,8 +46,8 @@ def top_artists():
     if not sp_auth.validate_token(sp_auth.cache_handler.get_cached_token()):
         redirect(url_for('login'))
     spotify = spotipy.Spotify(auth_manager=sp_auth)
-    pp.pprint(spotify.current_user_top_artists(limit=10,time_range='long_term'))
-    return redirect('/index')
+    artist_items=spotify.current_user_top_artists(limit=20,time_range='long_term')['items']
+    return render_template('top_artists.html',artists=artist_items)
 
 @app.route('/api_callback')
 def callback():

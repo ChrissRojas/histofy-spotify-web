@@ -1,4 +1,10 @@
-{% extends "base.html" %}
+{% extends "base_home.html" %}
 
 {% block content %}
+<div class="grid_layout">
+    <h1> Your Top Tracks</h1>
+    {% for track in tracks %}
+    {% include "track_card.html" %}
+    {% endfor %}
+</div>
 {% endblock %}

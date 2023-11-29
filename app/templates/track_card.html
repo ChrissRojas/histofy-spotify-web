@@ -1,0 +1,9 @@
+<div class="track_card">
+    {% for image in track.album.images %}
+        {% if image.height|int() == 300 %}
+        <img src="{{image.url}}">
+        {% endif %}
+    {% endfor %}
+    <h2>{{track.name}}</h2>
+    <h2>{{track['album']['artists'][0]['name']}}</h2>
+</div>

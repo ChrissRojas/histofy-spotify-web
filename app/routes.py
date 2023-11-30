@@ -63,8 +63,8 @@ def callback():
         spfy_oauth.callback_token(code)
     if request.args.get('error'):
         return redirect(url_for('index'))
-    print(session['token_info'])
-    return redirect(url_for('index'))
+    
+    return redirect(url_for('home'))
 
 @app.route('/logout', methods=['POST','GET'])
 def logout():

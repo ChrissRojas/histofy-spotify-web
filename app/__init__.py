@@ -12,5 +12,4 @@ app.config['SESSION_SQLALCHEMY']=db
 migrate = Migrate(app,db)
 Session(app)
 
-
 from app import routes
